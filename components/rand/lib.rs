@@ -41,6 +41,7 @@ const RESEED_THRESHOLD: u64 = 32_768;
 pub struct ServoRng {
     rng: ReseedingRng<IsaacCore, ServoReseeder>,
 }
+// ReseedingRng: A wrapper around any PRNG that implements BlockRngCore, that adds the ability to reseed it.
 
 impl RngCore for ServoRng {
     #[inline]
